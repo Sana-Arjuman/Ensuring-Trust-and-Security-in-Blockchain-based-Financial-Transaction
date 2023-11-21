@@ -1,0 +1,10 @@
+def hash(self):
+		h = hashlib.sha256()
+		h.update(
+		str(self.nonce).encode('utf8')+
+		str(self.data).encode('utf8')+
+		str(self.previous_hash).encode('utf8')+
+		str(self.timestamp).encode('utf8')+
+		str(self.blockName).encode('utf8'))
+		
+	return h.hexdigest()
